@@ -15,10 +15,10 @@ inquirer
             message: 'Please choose a color for your logo:'
         },
         {
-            type: 'choice',
+            type: 'list',
             name: 'shape',
             message: 'Please choose one of the following shapes for your logo:',
-            choice: ['Square', 'Triangle', 'Circle']
+            choices: ['Square', 'Triangle', 'Circle']
         },
         {
             type: 'input',
@@ -27,7 +27,7 @@ inquirer
         }
     ])
     .then((data) => {
-        const filename = `logo.svg`
+        const filename = `./examples/logo.svg`
 
         fs.writeFile(filename, JSON.stringify(data, null, '\t'), (err) => {
             err ? console.log(err) : console.log('success')
