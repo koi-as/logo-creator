@@ -30,18 +30,26 @@ inquirer
     .then((data) => {
         console.log(data)
 
+        if(data.text > 3) {
+            console.log('Please choose no more than 3 letters for your logo text!')
+            return;
+        }
+
         if(data.shape === 'Square') {
             const newSquare = new Square(data.text, data.textColor, data.shapeColor);
+            const generateSquare = newSquare.generateSVG()
             console.log('Square generating...');
-            writeToFile(newSquare);
+            writeToFile(generateSquare);
         } else if (data.shape === 'Triangle') {
             const newTriangle = new Triangle (data.text, data.textColor, data.shapeColor);
+            const generateTriangle = newTriangle.generateSVG();
             console.log('Triangle Generating...');
-            writeToFile(newTriangle);
+            writeToFile(generateTriangle);
         } else if (data.shape === 'Circle') {
             const newCircle = new Circle(data.text, data.textColor, data.shapeColor);
+            const generateCircle = newCircle.generateSVG();
             console.log('Circle generating...');
-            writeToFile(newCircle);
+            writeToFile(generateCircle);
         }
     });
 
@@ -51,7 +59,4 @@ const writeToFile = (generateSvg) => {
     fs.writeFile('./examples/logo.svg', svgFile, (err) => {
         err ? console.log(error) : console.log('Written to file')
     })
-    console.log(svgFile)
 }
-
-// module.exports = ;
