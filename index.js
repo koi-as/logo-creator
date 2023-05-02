@@ -28,8 +28,6 @@ inquirer
         }
     ])
     .then((data) => {
-        console.log(data)
-
         if(data.text.length > 3) {
             console.log('Please choose no more than 3 letters for your logo text!')
             return;
