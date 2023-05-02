@@ -1,6 +1,8 @@
 const fs = require('fs');
 const inquirer = require('inquirer');
 
+const {Square, Triangle, Circle} = require('./lib/shapes.js')
+
 inquirer
     .prompt([
         {
@@ -29,40 +31,22 @@ inquirer
         console.log(data)
 
         if(data.shape === 'Square') {
-            const generateSvg = () => 
-            `
-<svg width="300" height="200">
-    <rect width="200" height="200" style="fill:${data.shapeColor}"/>
-    <text fill="${data.textColor}" font-size="70" font-family="Verdana" x="20" y="100">${data.text}</text>
-</svg>
-`
-            console.log('Square generated')
-            writeToFile(generateSvg)
+            const newSquare = new Square(data.text, data.textColor, data.shapeColor);
+            console.log('Square generating...');
+            writeToFile(newSquare);
         } else if (data.shape === 'Triangle') {
-            const generateSvg = () => 
-            `
-<svg width="300" height="200">
-    <polygon points="150, 18 244, 182 56, 182" style="fill:${data.shapeColor}"/>
-    <text fill="${data.textColor}" font-size="70" font-family="Verdana" x="20" y="100">${data.text}</text>
-</svg>
-`
-            console.log('Triangle Generated')
-            writeToFile(generateSvg)
+            const newTriangle = new Triangle (data.text, data.textColor, data.shapeColor);
+            console.log('Triangle Generating...');
+            writeToFile(newTriangle);
         } else if (data.shape === 'Circle') {
-            const generateSvg = () => 
-            `
-<svg width="300" height="200">
-    <circle cx="100" cy="100" r="100" style="fill:${data.shapeColor}"/>
-    <text fill="${data.textColor}" font-size="70" font-family="Verdana" x="20" y="100">${data.text}</text>
-</svg>
-`
-            console.log('Circle generated')
-            writeToFile(generateSvg)
+            const newCircle = new Circle(data.text, data.textColor, data.shapeColor);
+            console.log('Circle generating...');
+            writeToFile(newCircle);
         }
     });
 
 const writeToFile = (generateSvg) => {
-    const svgFile = generateSvg()
+    const svgFile = generateSvg
 
     fs.writeFile('./examples/logo.svg', svgFile, (err) => {
         err ? console.log(error) : console.log('Written to file')
