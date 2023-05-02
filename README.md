@@ -18,5 +18,6 @@ To use this logo creator, simply open your terminal and follow the next few step
 * Finally choose a color for the shape. You can type in a color keyword or a hexadecimal number*
 </br>
 
-Once the logo has been created, a new file titled `logo.svg` will appear in the `examples` directory. Navigate there to get your newley generated SVG logo!
+Once the logo has been created, a new file titled `logo.svg` will appear in the `examples` directory. Navigate there to get your newley generated SVG logo! </br>
+Here is a link to a video on how demonstrating the programs functionality: https://drive.google.com/file/d/1ZlBGCj9NK7AJKr7_B_KC5ni4-lpigsEV/view?usp=sharing
 
