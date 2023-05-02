@@ -1,12 +1,6 @@
 const fs = require('fs');
 const inquirer = require('inquirer');
 
-class Shape {};
-
-class Square {};
-class Triangle{};
-class Circle{};
-
 inquirer
     .prompt([
         {
