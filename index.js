@@ -69,3 +69,5 @@ const writeToFile = (generateSvg) => {
     })
     console.log(svgFile)
 }
+
+// module.exports = ;

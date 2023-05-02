@@ -1,5 +1,5 @@
 
 <svg width="300" height="200">
-    <rect width="200" height="200" style="fill:orange"/>
-    <text fill="red" font-size="70" font-family="Verdana" x="20" y="100">oop</text>
+    <circle cx="100" cy="100" r="100" style="fill:red"/>
+    <text fill="orange" font-size="70" font-family="Verdana" x="20" y="100">OOP</text>
 </svg>
